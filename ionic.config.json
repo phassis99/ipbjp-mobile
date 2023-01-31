@@ -1,0 +1,7 @@
+{
+  "name": "ipbjp-mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
