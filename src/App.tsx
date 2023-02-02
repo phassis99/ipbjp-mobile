@@ -1,11 +1,14 @@
 import "./App.css";
+import Header from "./components/header/header.component";
+import { Home } from "./pages/Home";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      </header>
+    <div className="App h-screen w-screen bg-gray-100 flex flex-col gap-y-4">
+      <Header />
+      <div className="flex flex-col px-8">
+        <Home />
+      </div>
     </div>
   );
 }
