@@ -1,42 +1,59 @@
-import React from "react";
-import NavigationCard from "../../components/navigation-card/navigation-card.component";
+import { Carousel } from "antd";
+
 import BannerCarousel from "../../components/news-carousel/news-carousel.component";
-import "./home.component.scss";
+import styles from "./home.module.scss";
 const Home = () => {
-  const activities = [
+  const slideContent = [
     {
-      activity: "Calendário de Atividades",
-      icon: "fa-calendar-days fa-duotone",
-      color: "text-green-400",
+      id: 1,
+      title: "Spring Blooms",
+      text: "Experience the beauty of spring with blooming flowers.",
+      imgUrl: "https://images.unsplash.com/photo-1458571037713-913d8b481dc6",
+      bgColor: "#364d79",
     },
     {
-      activity: "Fale com o Pastor",
-      icon: "fa-comment-dots fa-duotone",
-      color: "text-blue-400",
+      id: 2,
+      title: "Summer Beach",
+      text: "Relax at the beach this summer and soak in the sun.",
+      imgUrl: "https://images.unsplash.com/photo-1506929562872-bb421503ef21",
+      bgColor: "#6b5b95",
     },
     {
-      activity: "Notícias",
-      icon: "fa-newspaper fa-duotone",
-      color: "text-yellow-400",
+      id: 3,
+      title: "Autumn Foliage",
+      text: "Enjoy the spectacular colors of fall leaves.",
+      imgUrl: "https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6",
+      bgColor: "#d64161",
     },
     {
-      activity: "Nosso Canal no Youtube",
-      icon: "fa-brands fa-youtube",
-      color: "text-red-400",
+      id: 4,
+      title: "Winter Snow",
+      text: "Witness a winter wonderland and enjoy the snow.",
+      imgUrl:
+        "https://plus.unsplash.com/premium_photo-1669704840027-c6505ad70cbd",
+      bgColor: "#ff7b25",
     },
   ];
 
   return (
-    <div className="home-folder">
+    <div className={styles.Home}>
       <BannerCarousel />
-      <div className="flex items-center justify-center gap-6 flex-row flex-wrap">
-        {activities.map((activity) => (
-          <NavigationCard
-            activity={activity.activity}
-            icon={activity.icon}
-            color={activity.color}
-          />
-        ))}
+      <div className="w-full">
+        <Carousel autoplay>
+          {slideContent.map((slide) => (
+            <div className={styles.carouselCard} key={slide.id}>
+              <img
+                src={slide.imgUrl}
+                alt={slide.title}
+                className={styles.carouselImage}
+              />
+              <div className={styles.carouselText}>
+                <h3>{slide.title}</h3>
+                <p>{slide.text}</p>
+              </div>
+            </div>
+          ))}
+        </Carousel>
       </div>
     </div>
   );

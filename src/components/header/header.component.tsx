@@ -1,14 +1,12 @@
-import HamburgerMenu from "../hamburguer-menu/hamburguer-menu.component";
-import "./header.component.scss";
+import Sidenav from "../side-nav/side-nav.component";
+import styles from "./header.module.scss";
 
 const Header = () => {
   return (
-    <header className="header-bar">
-      <HamburgerMenu />
+    <header className={styles.header}>
+      <Sidenav />
       <h1>IPB Jardim da Penha</h1>
-      <button>
-        <i className="fa-duotone fa-user"></i>
-      </button>
+      <button></button>
     </header>
   );
 };

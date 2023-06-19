@@ -1,13 +1,14 @@
-import "./App.css";
-import Header from "./components/header/header.component";
-import { Home } from "./pages/Home";
+import styles from "./App.module.scss";
 
+import Header from "./components/header/header.component";
+
+import { Outlet } from "react-router-dom";
 function App() {
   return (
-    <div className="App h-screen w-screen bg-gray-100 flex flex-col gap-y-4">
+    <div className={styles.App}>
       <Header />
-      <div className="flex flex-col px-8">
-        <Home />
+      <div className={styles.container}>
+        <Outlet />
       </div>
     </div>
   );

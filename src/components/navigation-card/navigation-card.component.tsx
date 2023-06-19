@@ -1,4 +1,4 @@
-import "./navigation-card.component.scss";
+import styles from "./navigation-card.module.scss";
 
 interface NavigationCardProps {
   activity: string;
@@ -10,7 +10,7 @@ const NavigationCard: React.FC<NavigationCardProps> = (props) => {
   const className = `${props?.icon} ${props?.color}`;
 
   return (
-    <div className="navigation-card w-40 h-32">
+    <div className={styles.navigationCard}>
       <div className="flex flex-col gap-y-3 items-center">
         <div className="navigation-icon">
           <i className={className}></i>

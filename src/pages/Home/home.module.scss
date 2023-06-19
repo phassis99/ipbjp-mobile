@@ -1,0 +1,40 @@
+.Home {
+  @apply flex flex-col items-center justify-center gap-8 w-full;
+
+  :global(.slick-list) {
+    border-radius: 10px;
+  }
+}
+
+.carouselCard {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.carouselImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.carouselText {
+  z-index: 2; // Text sits on top of image
+  position: relative; // Position in relation to .carousel-card
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

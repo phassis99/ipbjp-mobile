@@ -1,0 +1,12 @@
+.drawerButton {
+  @apply text-black flex flex-col justify-center;
+  border: none;
+  box-shadow: none;
+}
+
+.sideNavHeader {
+  // @apply flex flex-row;
+  .ant-drawer-header {
+    @apply flex flex-row justify-between;
+  }
+}
